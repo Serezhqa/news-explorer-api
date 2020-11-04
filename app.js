@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
+const cors = require('cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const routes = require('./routes');
 const errorHandler = require('./middlewares/error-handler');
@@ -25,6 +26,16 @@ app.use(helmet());
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(requestLogger);
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'http://www.diploma.students.nomoreparties.co',
+    'https://www.diploma.students.nomoreparties.co',
+    'http://diploma.students.nomoreparties.co',
+    'https://diploma.students.nomoreparties.co',
+  ],
+  credentials: true,
+}));
 app.use(routes);
 app.use(errorLogger);
 app.use(errors());
