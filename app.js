@@ -28,11 +28,10 @@ app.use(cookieParser());
 app.use(requestLogger);
 app.use(cors({
   origin: [
-    'http://localhost:3000',
-    'http://www.diploma.students.nomoreparties.co',
-    'https://www.diploma.students.nomoreparties.co',
-    'http://diploma.students.nomoreparties.co',
-    'https://diploma.students.nomoreparties.co',
+    'http://www.sergey1410.students.nomoreparties.co',
+    'https://www.sergey1410.students.nomoreparties.co',
+    'http://sergey1410.students.nomoreparties.co',
+    'https://sergey1410.students.nomoreparties.co',
   ],
   credentials: true,
 }));
